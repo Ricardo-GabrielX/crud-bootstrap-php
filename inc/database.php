@@ -42,6 +42,68 @@
 		return $found;
 	}
 
+	// // Criptografia
+	// function criptografia($senha){
+
+	
+	// 	/*
+	// 		==> Criptografia Blowfish
+	// 		http://www.linhadecodigo.com.br/artigo/3532/criptografando-senhas-usando-bcrypt-blowfish-no-php.aspx
+	// 	*/
+	// 	// Aplicando criptografia na senha
+	// 	$custo = "08";
+	// 	$salt = "CflfllePArK1BJomMOF6aJ";
+
+	// 	//gera um hash baseado em bcrypt
+	// 	$hash = crypt($senha, "$2a$" . $custo . "$" . $salt ."$");
+
+	// 	return $hash; // Retonar a senha criptgrafada
+	// }
+
+	// // Funcao para limpar mensagens
+
+	// function clear_messages(){
+	// 	$_SESSION['message'] = null;
+	// 	$_SESSION['type'] = null;
+	// }
+
+	// /**
+	//  * Pesquisa registros pelo parâmetro $p que foi passado
+	//  */
+	// function filter($table = null, $p = null) {
+	// 	$database = open_database(); // Abre a conexão com o banco de dados
+	// 	$found = null; // Variável para armazenar os registros encontrados
+
+	// 	try {
+	// 		if ($p) {
+	// 			// Monta a query SQL com o parâmetro passado
+	// 			$sql = "SELECT * FROM $table WHERE $p";
+	// 			$result = $database->query($sql); // Executa a query no banco de dados
+
+	// 			// Verifica se a query retornou resultados
+	// 			if ($result->num_rows > 0) {
+	// 				$found = array(); // Inicializa o array que armazenará os resultados
+	// 				while ($row = $result->fetch_assoc()) {
+	// 					array_push($found, $row); // Adiciona cada linha de resultado ao array
+	// 				}
+	// 			} else {
+	// 				throw new Exception("Não foram encontrados registros de dados!");
+	// 			}
+	// 		}
+	// 	} catch (Exception $e) {
+	// 		// Captura a exceção e define uma mensagem de erro na sessão
+	// 		$_SESSION['message'] = "Ocorreu um erro: " . $e->getMessage();
+	// 		$_SESSION['type'] = "danger";
+	// 	}
+
+	// 	// Fecha a conexão com o banco de dados
+	// 	close_database($database);
+
+	// 	// Retorna os registros encontrados ou null
+	// 	return $found;
+	// }
+
+
 
 			/**
 	 *  Pesquisa Todos os Registros de uma Tabela
