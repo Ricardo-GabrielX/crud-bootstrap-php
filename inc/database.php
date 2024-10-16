@@ -43,29 +43,29 @@
 	}
 
 	// // Criptografia
-	// function criptografia($senha){
+	function criptografia($senha){
 
 	
-	// 	/*
-	// 		==> Criptografia Blowfish
-	// 		http://www.linhadecodigo.com.br/artigo/3532/criptografando-senhas-usando-bcrypt-blowfish-no-php.aspx
-	// 	*/
-	// 	// Aplicando criptografia na senha
-	// 	$custo = "08";
-	// 	$salt = "CflfllePArK1BJomMOF6aJ";
+		/*
+			==> Criptografia Blowfish
+			http://www.linhadecodigo.com.br/artigo/3532/criptografando-senhas-usando-bcrypt-blowfish-no-php.aspx
+		*/
+		// Aplicando criptografia na senha
+		$custo = "08";
+		$salt = "CflfllePArK1BJomMOF6aJ";
 
-	// 	//gera um hash baseado em bcrypt
-	// 	$hash = crypt($senha, "$2a$" . $custo . "$" . $salt ."$");
+		//gera um hash baseado em bcrypt
+		$hash = crypt($senha, "$2a$" . $custo . "$" . $salt ."$");
 
-	// 	return $hash; // Retonar a senha criptgrafada
-	// }
+		return $hash; // Retonar a senha criptgrafada
+	}
 
-	// // Funcao para limpar mensagens
+	// Funcao para limpar mensagens
 
-	// function clear_messages(){
-	// 	$_SESSION['message'] = null;
-	// 	$_SESSION['type'] = null;
-	// }
+	function clear_messages(){
+		$_SESSION['message'] = null;
+		$_SESSION['type'] = null;
+	}
 
 	// /**
 	//  * Pesquisa registros pelo parâmetro $p que foi passado
