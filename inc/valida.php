@@ -1,85 +1,81 @@
 <?php
 // Esse é o valida.php
-include ("../config.php");
-require_once(DBAPI);
+include ('../config.php');
+include(DBAPI);
 include(HEADER_TEMPLATE);
 
-// Verifica se houve POST e se o usuário ou a senha são vazios
-if (!empty($_POST) && (empty($_POST['login']) || empty($_POST['senha']))) {
-    // Redireciona para a página inicial se os campos estiverem vazios
-    header("Location: " . BASEURL . "index.php");
+// Verifica se houve POST e se o usuário ou a senha é(são) vazio(s)
+if (!empty($_POST) AND (empty($_POST['login']) OR empty($_POST['senha']))) {
+    header('Location: ' . BASEURL . 'index.php');
     exit;
 }
 
+// Tenta se conectar a um banco de dados MySQL
 $bd = open_database();
-
 try {
-    // Selecionando o Banco de dados que está ajustado na constante DB_NAME
-    $bd->select_db(DB_NAME);
-
-    // Pegando o login e senha digitados no form
+// Selecionando o Banco de dados que está ajustado na constante DB_NAME
+// Caso ele não consiga.
+    $bd = select_db(DB_NAME);
+// Pegando o login e senha digitado no form
     $usuario = $_POST['login'];
     $senha = $_POST['senha'];
-
-    // Verificando se o login e a senha digitados no form não estão vazios
+// testando para ver so o login e senha digitado no form não estão vazios
     if (!empty($usuario) && !empty($senha)) {
-        // Criptografando a senha digitada para comparar
-        // A função de criptografia foi movida para o arquivo database.php (DBAPI)
+        // Pega a senha digitada no form e criptografa ela para poder comparar
+        // A mesma função de criptografia FOI MOVIDA para o arquivo database.php (DBAPI)
         $senha = criptografia($_POST['senha']);
 
-        // Validação do usuário/senha digitados
-        $sql = "SELECT id, nome, user, password FROM usuarios WHERE (user = '$usuario') AND (password = '$senha') LIMIT 1";
+        // Validando usuário/senha digitados
+        $sql = "SELECT id, nome, user, password FROM usuarios WHERE (user = '". $usuario ."') AND (password = '". $senha ."') LIMIT 1;";
         $query = $bd->query($sql);
-
         if ($query->num_rows > 0) {
-            // Coletando os dados
             $dados = $query->fetch_assoc();
+            var_dump($dados);
 
-            $id = $dados['id'];
             $nome = $dados['nome'];
             $user = $dados['user'];
             $password = $dados['password'];
-
-            // Verifica se $user não está vazio
+            $id = $dados['id'];
+            // Verifica se user não está vazio
             if (!empty($user)) {
-                if (!isset($_SESSION)) session_start();
-
-                // Definindo variáveis de sessão
-                $_SESSION['message'] = "Bem vindo, $nome!";
+                if (isset($_SESSION)) session_start();
+                $_SESSION['message'] = "Bem vindo " . $nome . "!";
                 $_SESSION['type'] = "info";
                 $_SESSION['id'] = $id;
-                $_SESSION['nome'] = $nome;
                 $_SESSION['user'] = $user;
-
-                // Redireciona para a página inicial
-                header("Location: " . BASEURL . "index.php");
-                exit;
+                echo "<br>";
+                var_dump($user);
+                echo "<br>";
+                car_wash($user);
+                echo "<br>";
+            } else {
+                // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
+                throw new Exception("Não foi possível se conectar:<br>Verifique seu usuário e senha.");
             }
+        // Direciona para o index do site
+        header("Location: " . BASEURL . "index.php");
         } else {
-            // Mensagem de erro quando os dados são inválidos ou o usuário não foi encontrado
-            throw new Exception("Não foi possível se conectar!<br>Verifique seu usuário e senha.");
+            // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
+            throw new Exception("Não foi possível se conectar:<br>Verifique seu usuário e senha.");
         }
     } else {
-        // Mensagem de erro quando os dados são inválidos ou o usuário não foi encontrado
-        throw new Exception("Não foi possível se conectar!<br>Verifique seu usuário e senha.");
+        // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
+        throw new Exception("Não foi possível se conectar:<br>Verifique seu usuário e senha.");
     }
 } catch (Exception $e) {
-    $_SESSION['message'] = "Ocorreu um erro: " . $e->getMessage();
+    $_SESSION['message'] = "Ocorreu um erro: " . $e->GetMessage();
     $_SESSION['type'] = "danger";
 }
 
 ?>
-
-<?php if (!empty($_SESSION['message'])): ?>
-    <div class="alert alert-<?php echo $_SESSION['type']; ?> alert-dismissible" role="alert" id="actions">
-        <?php echo $_SESSION['message']; ?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    <?php clear_messages(); ?>
+<?php if (!empty($_SESSION['message'])) : ?>
+<div class="alert alert-<?php echo $_SESSION['type']; ?> alert-dismissible" role="alert" id="actions">
+    <?php echo $_SESSION['message']; ?>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 <?php endif; ?>
 
-<header>
-    <a href="<?php echo BASEURL ?>index.php" class="btn btn-light"><i class="fa-solid fa-rotate-left"></i> Voltar</a>
-</header>
-
-<?php include(FOOTER_TEMPLATE); ?>
+<?php
+    clear_messages(); 
+    include(FOOTER_TEMPLATE);
+ ?>

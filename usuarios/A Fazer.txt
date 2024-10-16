@@ -1,13 +1,22 @@
 FEITO:
 Functions
-
-
+Index
+View
+Edit
+Delete
 
 A Fazer:
-Restante
+add
+modal
+view
 
 
 
 
 A Revisar:
-INDEX
+
+
+
+Mudanças feitas na aula:
+Tudo exceto Functions e acho que index.
+Tirando os arquivos que são iguais aos das outras pastas

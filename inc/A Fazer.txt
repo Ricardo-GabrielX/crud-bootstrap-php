@@ -4,3 +4,7 @@ REVISAR:
 
 FEiTO:
 todos, POREM REVISAR
+
+
+Mudanças feitas na aula:
+valida
