@@ -72,7 +72,7 @@
                         </a>
                     <?php else : ?>
                         <a class="nav-link" href="<?php echo BASEURL; ?>/inc/login.php">
-                            <i class="fa-solid fa-users"></i> Login
+                        <i class="fa-solid fa-users" style="color: #ffffff;"></i> Login
                     </a>
                     <?php endif; ?>
                 </ul>
