@@ -1,5 +1,36 @@
 <?php
+	//  Pesquisa registros pelo parametro $p que foi passado
 	
+	   function filter($table = null, $p = null) {
+		   $database = open_database();
+		   $found = null;
+		   
+		   try {
+			   if ($p) {
+				   $sql = "SELECT * FROM " . $table . " WHERE " . $p;
+				   $result = $database->query($sql);
+				   
+				   if ($result->num_rows > 0) {
+					   $found = array();
+					   while ($row = $result->fetch_assoc()) {
+						   array_push($found, $row);
+					   }
+				   } else {
+					   throw new Exception("Não foram encontrados registros de dados!");
+				   }
+			   }
+		   } catch (Exception $e) {
+			   $_SESSION['message'] = "Ocorreu um erro: " . $e->getMessage();
+			   $_SESSION['type'] = "danger";
+		   }
+		   
+		   close_database($database);
+		   return $found;
+	   }
+   
+   
+   
+			   
 		/**
 	 *  Pesquisa um Registro pelo ID em uma Tabela
 	 */
@@ -67,45 +98,11 @@
 		$_SESSION['type'] = null;
 	}
 
-	// /**
-	//  * Pesquisa registros pelo parâmetro $p que foi passado
-	//  */
-	// function filter($table = null, $p = null) {
-	// 	$database = open_database(); // Abre a conexão com o banco de dados
-	// 	$found = null; // Variável para armazenar os registros encontrados
-
-	// 	try {
-	// 		if ($p) {
-	// 			// Monta a query SQL com o parâmetro passado
-	// 			$sql = "SELECT * FROM $table WHERE $p";
-	// 			$result = $database->query($sql); // Executa a query no banco de dados
-
-	// 			// Verifica se a query retornou resultados
-	// 			if ($result->num_rows > 0) {
-	// 				$found = array(); // Inicializa o array que armazenará os resultados
-	// 				while ($row = $result->fetch_assoc()) {
-	// 					array_push($found, $row); // Adiciona cada linha de resultado ao array
-	// 				}
-	// 			} else {
-	// 				throw new Exception("Não foram encontrados registros de dados!");
-	// 			}
-	// 		}
-	// 	} catch (Exception $e) {
-	// 		// Captura a exceção e define uma mensagem de erro na sessão
-	// 		$_SESSION['message'] = "Ocorreu um erro: " . $e->getMessage();
-	// 		$_SESSION['type'] = "danger";
-	// 	}
-
-	// 	// Fecha a conexão com o banco de dados
-	// 	close_database($database);
-
-	// 	// Retorna os registros encontrados ou null
-	// 	return $found;
-	// }
-
-
-
-			/**
+	/**
+	 * Pesquisa registros pelo parâmetro $p que foi passado
+	 */
+	/**
+ 
 	 *  Pesquisa Todos os Registros de uma Tabela
 	 */
 	

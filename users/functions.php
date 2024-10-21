@@ -17,18 +17,6 @@
         }
     }
 
-    // Função para criptografar a senha
-    function criptografia($senha) {
-        // Criptografia Blowfish
-        // http://www.linhadecodigo.com.br/artigo/3532/criptografando-senhas-usando-bcrypt-blowfish-no-php.aspx
-
-        $custo = "08";
-        $salt = "CflfllePArK1BJomM0F6aJ"; 
-
-        // Gera um hash baseado em bcrypt
-        $hash = crypt($senha, "$2a$" . $custo . "$" . $salt . "$");
-        return $hash; // Retorna a senha criptografada
-    }
 
     // Função para upload de imagens
     function upload($pasta_destino, $arquivo_destino, $tipo_arquivo, $nome_temp, $tamanho_arquivo) {
