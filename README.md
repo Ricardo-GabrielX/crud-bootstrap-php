@@ -24,7 +24,7 @@ Na imagem, tentei acessar a página novo cliente, e como pode ver o site te dá 
 
 ### Tecnologias usadas:
 
-Ele foi desenvolvido utilizando **HTML, Bootstrap, CSS** e, principalmente, **PHP**, Fora o banco de dados **MySql**. Agora, neste último semestre, daremos continuidade ao projeto provavelmente relacionando as tabelas ou algo do tipo, ainda não foi passado para a gente a continuidade.
+##### Ele foi desenvolvido utilizando **HTML, Bootstrap, CSS** e, principalmente, **PHP**, Fora o banco de dados **MySql**.
 
 ---
 
