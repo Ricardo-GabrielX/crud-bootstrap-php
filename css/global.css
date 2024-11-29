@@ -1,0 +1,30 @@
+body {
+    background-color: #000;
+
+}
+
+section {
+    color: #FFFFFF;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.custom-shadow {
+    box-shadow: 0 6px 13px rgba(0, 0, 0, 0.5);
+}
+
+
+:root {
+    --main: #C3D900;
+    --azul: #0550fd;
+}
+
+
+.copy {
+    color: var(--main);
+}
+
+
+.tableVerde {
+    background-color: var(--main);
+}

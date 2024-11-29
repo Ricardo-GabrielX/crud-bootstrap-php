@@ -1,0 +1,74 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+nav a {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    }
+
+nav a {
+    --primary-color: #111;
+    --hovered-color: #0d6efd;
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    font-size: 20px;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+nav a p {
+margin: 0;
+position: relative;
+font-size: 20px;
+color: var(--primary-color);
+}
+
+nav a::after {
+position: absolute;
+content: "";
+width: 0;
+left: 0;
+bottom: -7px;
+background: var(--hovered-color);
+height: 2px;
+transition: 0.3s ease-out;
+}
+
+nav a p::before {
+position: absolute;
+/*   box-sizing: border-box; */
+content: "Subscribe";
+width: 0%;
+inset: 0;
+color: var(--hovered-color);
+overflow: hidden;
+transition: 0.3s ease-out;
+}
+
+nav a:hover::after {
+width: 100%;
+}
+
+nav a:hover p::before {
+width: 100%;
+}
+
+
+nav a:hover svg {
+transform: translateX(4px);
+color: var(--hovered-color);
+}
+
+nav a svg {
+color: var(--primary-color);
+transition: 0.2s;
+position: relative;
+width: 15px;
+transition-delay: 0.2s;
+}
+

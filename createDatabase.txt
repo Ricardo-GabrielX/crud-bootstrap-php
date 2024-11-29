@@ -1,0 +1,79 @@
+-- cria o banco de dados
+CREATE DATABASE wda_crud;
+-- seleciona o banco de dados
+USE wda_crud;
+-- cria a tabela do projeto
+CREATE TABLE customers (
+  id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  name varchar(255) NOT NULL,
+  cpf_cnpj varchar(14) NOT NULL,
+  birthdate datetime NOT NULL,
+  address varchar(255) NOT NULL,
+  hood varchar(100) NOT NULL,
+  zip_code varchar(8) NOT NULL,
+  city varchar(100) NOT NULL,
+  state varchar(2) NOT NULL,
+  phone varchar(11) NOT NULL,
+  mobile varchar(11) NOT NULL,
+  ie varchar(15) NOT NULL,
+  created datetime NOT NULL,
+  modified datetime NOT NULL
+);
+-- insere dados na tabela
+ 
+INSERT INTO customers (name,  cpf_cnpj, birthdate, address,
+  hood, zip_code, city, state, phone, mobile, ie, created,
+  modified) 
+  VALUES
+  ('Fulano de Tal', '123.456.789-00', '1989-01-01', 'Rua da Web, 123', 
+'Internet', '12345678', 'Sorocaba', 'SP', '15 34118899', '15934118899', '1234566464', 
+'2024-08-09', '2024-08-09'),
+('Ciclano de Tal', '123.456.788-00', '1989-01-01', 'Rua da Web, 124', 
+'Internet', '12345678', 'Sorocaba', 'SP', '15 34118800', '15934118800', '1234566400', 
+'2024-08-09', '2024-08-09');
+
+
+
+
+-- LIVROS
+
+
+-- seleciona o banco de dados
+USE wda_crud;
+-- cria a tabela do projeto
+CREATE TABLE livros (
+  id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  titulo_livro varchar(255) NOT NULL,
+  autor varchar(80) NOT NULL,
+  editora varchar(80) NOT NULL,
+  descricao TEXT NOT NULL,
+  capa VARCHAR(255) ,
+  preco varchar(11) NOT NULL,
+  genero_livro varchar(50) NOT NULL,
+  modified datetime NOT NULL,
+  created datetime NOT NULL
+);
+-- insere dados na tabela
+ 
+INSERT INTO livros (titulo_livro, autor, editora,
+  descricao, capa, preco, genero_livro) 
+  VALUES
+  ('Romeu e Julieta', ' William Shakespeare', 'Penguin-Companhia', 'Há muito tempo duas famílias banham em sangue as ruas de Verona. Enquanto isso, na penumbra das madrugadas, ardem as brasas de um amor secreto....', 
+'', '36.24', 'Conto'),
+('O homem mais rico da Babilônia', '  George S Clason', 'HarperCollins', 'Baseando-se nos segredos de sucesso dos antigos babilônicos ― os habitantes da cidade mais rica e próspera de seu tempo ―, George S. Clason mostra soluções....', 
+'', '21.49', 'Finanças');
+
+
+-- Script para criar e cadastrar na tabela usuários (execute no banco do projeto):
+CREATE TABLE usuarios(
+    id int AUTO_INCREMENT not null PRIMARY KEY,
+    nome varchar(50) not null,
+    user varchar(50) not null,
+    password varchar(100) not null,
+    foto varchar(256)
+);
+
+INSERT INTO `usuarios`(`nome`, `user`, `password`) 
+VALUES ('Zé Lele','zelele','5243897562837456982'),
+('Mary Zica','mazi','786098767869'),
+('Fugiru Nakombi','fugina','623485634753234');
