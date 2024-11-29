@@ -10,6 +10,7 @@ Quando acessar o site, notará um botão escrito saiba mais. Nele, encontrará a
 No projeto, há uma pasta chamada users que fica todos os registros de usuários, e usuário admin tem permissões que usuários normais não tem.
 ### Não fazer login
 Se quem estiver navegando pelo site não fazer login, restringimos para que, possa somente visualizar clientes e livros. E somente visualizar, não pode editar, adicionar ou apagar. E mesmo que tente, não será possível pois tem a verificação e se não estiver logado redirecionamos a pessoa a fazer login:
+
 ![image](https://github.com/user-attachments/assets/99581836-d347-472a-bb87-ab7cf0b8eca9)
 
 Na imagem, tentei acessar a página novo cliente, e como pode ver o site te dá essa mensagem e depois redireciona para a página de login. 
