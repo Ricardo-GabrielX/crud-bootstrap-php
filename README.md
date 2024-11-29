@@ -8,5 +8,4 @@ Ele foi desenvolvido utilizando **HTML, Bootstrap, CSS** e, principalmente, **PH
 
 ---
 
-### ainda está em desenvolvimento:
-Ainda estamos adicionando algumas funcionalidades, o site não esta 100% pronto, mas até o final do bimestre, estará concluido e vou hospedar ele para fácil acesso.
+
