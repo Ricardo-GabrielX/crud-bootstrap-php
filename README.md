@@ -4,11 +4,35 @@ Olá! Este site é parte de um projeto acadêmico do meu curso técnico de Anál
 
 ---
 
-## Como fuciona?
+## 🛠 Tecnologias Utilizadas
+PHP
+Bootstrap 5
+MySQL
+JavaScript
+
+### icones:
+Fonteawesome
+
+---
+  
+## 📚 Funcionalidades
 
 Quando acessar o site, notará um botão escrito saiba mais. Nele, encontrará as informações para login de usuário normal e admin. Onde você poderá acessar o site e testar todas as funcionalidades. 
 
+Adicionar registros: Formulário estilizado para entrada de dados.
+Listar registros: Exibição organizada em tabelas responsivas.
+Editar registros: Permite atualizar informações existentes.
+Excluir registros: Remoção segura com confirmação.
+
 ---
+
+
+## Página principal: 
+
+![image](https://github.com/user-attachments/assets/90ff34e5-1343-4345-82ae-7234fa2c1ae5)
+
+---
+
 ## Verificação e permissões
 
 No projeto, há uma pasta chamada users que fica todos os registros de usuários, e usuário admin tem permissões que usuários normais não tem.
@@ -22,15 +46,17 @@ Na imagem, tentei acessar a página novo cliente, e como pode ver o site te dá 
 
 ---
 
-### Tecnologias usadas:
+## 🌟 Destaques Técnicos
+Validação:
+Campos com validação de entrada usando JavaScript e PHP no backend.
 
-#### Ele foi desenvolvido utilizando **HTML, Bootstrap, CSS** e, principalmente, **PHP**, Fora o banco de dados **MySql**.
+Modularidade:
+Código organizado em arquivos separados para facilitar a manutenção.
 
 ---
 
-## Página principal: 
+#LINK DE DEPLOY: https://crud-bootstrap-php.x10.mx/
 
-![image](https://github.com/user-attachments/assets/90ff34e5-1343-4345-82ae-7234fa2c1ae5)
 
 
 
