@@ -17,10 +17,10 @@ Fonteawesome
 
 Quando acessar o site, notará um botão escrito saiba mais. Nele, encontrará as informações para login de usuário normal e admin. Onde você poderá acessar o site e testar todas as funcionalidades. 
 
-Adicionar registros: Formulário estilizado para entrada de dados.
-Listar registros: Exibição organizada em tabelas responsivas.
-Editar registros: Permite atualizar informações existentes.
-Excluir registros: Remoção segura com confirmação.
+<br>Adicionar registros: Formulário estilizado para entrada de dados.
+<br>Listar registros: Exibição organizada em tabelas responsivas.
+<br>Editar registros: Permite atualizar informações existentes.
+<br>Excluir registros: Remoção segura com confirmação.
 
 
 ## Página principal: 
